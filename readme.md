@@ -44,7 +44,6 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 * this is the screen shot in case the draw io is not working 
 
 Primary Keys: customer_id, product_id, sale_id
-
 Foreign Keys: customer_id references Customers, product_id references Products
 
 #### Table: customers
