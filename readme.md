@@ -41,6 +41,12 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 
 
 
+![Uploading pl customer modal.png…]()
+
+<img width="960" height="419" alt="pl product modal" src="https://github.com/user-attachments/assets/88d153fe-6900-4d5e-b489-611938c845c4" />
+
+
+
 * this is the screen shot in case the draw io is not working 
 
  *Primary Keys: customer_id, product_id, sale_id
@@ -67,6 +73,9 @@ CREATE TABLE customers (
 );
 
 ```
+<img width="1361" height="695" alt="pl customer table" src="https://github.com/user-attachments/assets/1f70f780-97b5-4854-9aa7-2dc80d04e8f4" />
+
+
 
 this the way of inserting the values
 ```sql
@@ -80,6 +89,9 @@ INSERT INTO customers VALUES (8, 'Claire uwikunze', 'Musanze', 'Tourist');
 INSERT INTO customers VALUES (9 'David bayingana', 'Kigali', 'Regular');
 INSERT INTO customers VALUES (10 'kubwimana aimable', 'Huye', 'Student');
 ```
+
+
+<img width="1361" height="695" alt="pl customer table" src="https://github.com/user-attachments/assets/9df0ce3a-be30-4187-8cb5-ce6165f79c7d" />
 
 .. ***Create customers table for Inock Rwandan Coffee Shop
 .. **This table stores all customer information and their branch preferences
@@ -101,6 +113,14 @@ CREATE TABLE products (
     price NUMBER(8,2)
 );
 ```
+
+
+
+<img width="1068" height="670" alt="pl product table" src="https://github.com/user-attachments/assets/52a4012c-5a7b-4a5d-a4e7-2bad010588ee" />
+
+-- Create products table - stores coffee shop menu items
+-- Used for product performance analysis and inventory management
+
 ```sql
 
 INSERT INTO products VALUES (1, 'Rwanda Arabica Brew', 'Coffee', 2500);
@@ -116,9 +136,8 @@ INSERT INTO products VALUES (5, 'volcano Muffin', 'Pastry', 1800);
 
 ```
 
--- Create products table - stores coffee shop menu items
--- Used for product performance analysis and inventory management
-![products  Results](screenshot/pl product table.png)** - creating product result
+<img width="1068" height="670" alt="pl product table" src="https://github.com/user-attachments/assets/9659cc3d-44d3-4013-9bdf-2c1fc1ddbc84" />
+
 
 ### Table: sales
 Core table for all analytical queries
@@ -138,6 +157,11 @@ CREATE TABLE sales (
 );
 ```
 
+<img width="1176" height="654" alt="pl sales table" src="https://github.com/user-attachments/assets/58eb6c67-ab95-497b-aef0-85a5d8e4105c" />
+
+--Create sales table - records all customer transactions
+-- Links customers to products with date and amount details
+ - creating sales result
 ```sql
 INSERT INTO sales VALUES (1, 1, 1, DATE '2025-01-10', 2, 5000);
 INSERT INTO sales VALUES (2, 2, 2, DATE '2025-01-01', 1, 3000);
@@ -150,10 +174,8 @@ INSERT INTO sales VALUES (8, 7, 3, DATE '2025-01-07', 3, 4500);
 INSERT INTO sales VALUES (9, 7, 4, DATE '2025-01-08', 2, 4000);
 INSERT INTO sales VALUES (10, 10, 5, DATE'2025-01-09', 1, 1800);
 ```
+<img width="1176" height="654" alt="pl sales table" src="https://github.com/user-attachments/assets/4053d8c2-a589-44a4-a049-7b2858feaebc" />
 
---Create sales table - records all customer transactions
--- Links customers to products with date and amount details
-![sales   Results](screenshot/pl sales table.png)** - creating sales result
 
 ### 1. Ranking Query
 
@@ -227,13 +249,15 @@ ORDER BY week_number;
     SELECT TO_CHAR(sale_date, 'WW') as week_number, SUM(amount) as weekly_sales
     FROM sales
     GROUP BY TO_CHAR(sale_date, 'WW')) ORDER BY week_number;
+<img width="1254" height="606" alt="navigation function" src="https://github.com/user-attachments/assets/8f677379-2711-4752-8a4e-87360359e05e" />
 
 ```
 ```
 * LAG() function accesses previous week's data for comparison
 * Growth percentage calculation shows performance changes week-to-week
 * Helps identify successful periods and seasonal patterns for planning
-![Navigation Results](screenshot/navigation function.png)** - Growth percentage calculations
+
+
 
   ### 4. distribution window functions
 
@@ -250,6 +274,9 @@ ORDER BY week_number;
     JOIN customers c ON s.customer_id = c.customer_id
     GROUP BY c.customer_name)ORDER BY total_spent DESC;
    ```
+
+   <img width="1182" height="651" alt="distribution window function " src="https://github.com/user-attachments/assets/86166ae1-fe2a-4604-8a7f-b4474ede42e1" />
+
 
 1.NTILE(4) function creates 4 equal customer groups based on spending
 2.Quartile 1 represents VIP customers needing retention focus
@@ -318,9 +345,7 @@ All SQL queries, database design, and business analysis were done by me based on
 - Some screenshots have been **combined** so that both the query and its output appear together.  
 - This was only done to make the explanations clearer and more organized — the results themselves are real and unedited.  
 
-### AI Usage Disclosure
-I used AI tools only to **make the English easier to read and more friendly**.  
-All technical work — SQL queries, coding, and analysis — is fully my own effort.  
+
 
 ### Special Acknowledgement
 A heartfelt thank you to ** lecture Eric Maniraguha** 🙏.  
