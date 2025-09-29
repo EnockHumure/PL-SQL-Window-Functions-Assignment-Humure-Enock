@@ -1,3 +1,9 @@
+-- =====================================================
+-- Project: PL/SQL Window Functions – Schema Creation
+-- Student Name: Humure Enock
+-- Course: INSY 8311 – Database Development with PL/SQL
+-- =====================================================
+
 SELECT branch_location, product_name, total_sales, rn
 FROM (
   SELECT c.branch_location,

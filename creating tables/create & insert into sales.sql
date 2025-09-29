@@ -1,3 +1,9 @@
+-- =====================================================
+-- Project: PL/SQL Window Functions – Schema Creation
+-- Student Name: Humure Enock
+-- Course: INSY 8311 – Database Development with PL/SQL
+-- =====================================================
+
 CREATE TABLE sales (
     sale_id NUMBER PRIMARY KEY,
     customer_id NUMBER REFERENCES customers(customer_id),

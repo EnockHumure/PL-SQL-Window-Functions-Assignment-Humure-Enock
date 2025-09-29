@@ -40,7 +40,7 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 
 
 ---[drawing schema using draw io](screenshot/database schema.drawio)
-  [screen shot of er diagram](screenshot/drawing of schema.png)
+    [screen shot of er diagram](screenshot/drawing of schema.png)
 * this is the screen shot in case the draw io is not working 
 
 Primary Keys: customer_id, product_id, sale_id
@@ -100,25 +100,25 @@ Stores temporal data for trend analysis and growth calculations
 -- Calculate running totals and moving averages of weekly sales
 -- Demonstrates window functions with frame specifications
 
-**[Aggregate functions query](queries/02_aggregate.sql)** - Sales trends calculation
-**[Aggregate results](screenshots/aggregate.png)** - Running totals output
+**[Aggregate functions query](queries/agregate function.sql)** - Sales trends calculation
+
 
 * ROWS UNBOUNDED PRECEDING calculates cumulative sum from beginning
 * ROWS BETWEEN 3 PRECEDING AND CURRENT ROW creates 4-week moving window
 * Provides trend analysis and performance tracking capabilities
-
+**[Aggregate results](screenshot/aggregate window  function.png)** - Running totals output
             #### 3.navigation window functions
 
 -- Navigation Functions: Week-over-Week Growth Analysis
 -- Uses LAG() to compare current week with previous week sales
 -- Calculates growth percentages for trend identification
 
-**[Navigation Functions Implementation](queries/03_navigation_functions.sql)** - Week-over-week growth analysis  
-**[Navigation Results](screenshots/navigation_results.png)** - Growth percentage calculations
+**[Navigation Functions Implementation](queries/navigation function.sql)** - Week-over-week growth analysis  
 
 * LAG() function accesses previous week's data for comparison
 * Growth percentage calculation shows performance changes week-to-week
 * Helps identify successful periods and seasonal patterns for planning
+**[Navigation Results](screenshot/navigation function.png)** - Growth percentage calculations
 
             ### 4. distribution window functions
 
@@ -126,12 +126,13 @@ Stores temporal data for trend analysis and growth calculations
 -- Uses NTILE(4) to divide customers into 4 equal spending groups
 -- Segments customers by total spending for targeted marketing
 
-**[Distribution Functions Implementation](queries/04_distribution_functions.sql)** - Customer segmentation by spending  
+**[Distribution Functions Implementation](queries/distribution functions.sql)** - Customer segmentation by spending  
 
 1.NTILE(4) function creates 4 equal customer groups based on spending
 2.Quartile 1 represents VIP customers needing retention focus
 3.Quartile 4 identifies customers who may need reactivation campaigns
 
+**[Distribution results](screenshot/distribution window function .png)
 ###### Step 4: Results Analysis 
 
 ### Descriptive Analysis (What Happened?)

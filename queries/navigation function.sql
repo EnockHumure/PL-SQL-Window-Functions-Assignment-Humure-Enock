@@ -1,3 +1,9 @@
+-- =====================================================
+-- Project: PL/SQL Window Functions – Schema Creation
+-- Student Name: Humure Enock
+-- Course: INSY 8311 – Database Development with PL/SQL
+-- =====================================================
+
 SELECT week_number, weekly_sales,
     LAG(weekly_sales, 1) OVER (ORDER BY week_number) as previous_week,
     ROUND(((weekly_sales - LAG(weekly_sales, 1) OVER (ORDER BY week_number)) / 

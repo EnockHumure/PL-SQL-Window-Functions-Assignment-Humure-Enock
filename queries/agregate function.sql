@@ -1,3 +1,9 @@
+-- =====================================================
+-- Project: PL/SQL Window Functions – Schema Creation
+-- Student Name: Humure Enock
+-- Course: INSY 8311 – Database Development with PL/SQL
+-- =====================================================
+
 SELECT week_number, weekly_sales,
        SUM(weekly_sales) OVER (
          ORDER BY week_number ROWS UNBOUNDED PRECEDING
