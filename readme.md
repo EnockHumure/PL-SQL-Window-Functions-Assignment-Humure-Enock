@@ -346,8 +346,6 @@ Screenshots and examples have been combined with both the **queries and their re
   *Window Functions Lecture Slides (Week 2).*  
 - W3Schools. (2024). *SQL Window Functions Reference.*  
   https://www.w3schools.com/sql/sql_window_functions.asp  
-through my work here are my forlder https://drive.google.com/drive/folders/1vlVcs2LNdf-qGTCdPzNVEgqGx2KnBDMX
----
 
 ## #Academic Integrity & Declaration
 
@@ -358,7 +356,8 @@ All SQL queries, database design, and business analysis were done by me based on
 - Some screenshots have been **combined** so that both the query and its output appear together.  
 - This was only done to make the explanations clearer and more organized — the results themselves are real and unedited.  
 
-
+## here my final work we will focus on there is folder that can show you all my work through my work here are my forlder https://drive.google.com/drive/folders/1vlVcs2LNdf-qGTCdPzNVEgqGx2KnBDMX
+---
 
 ### Special Acknowledgement
 A heartfelt thank you to ** lecture Eric Maniraguha** 🙏.  
