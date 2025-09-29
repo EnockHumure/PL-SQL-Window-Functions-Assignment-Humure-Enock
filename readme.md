@@ -35,7 +35,7 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 4. **Segment customers into spending quartiles** using `NTILE(4)` - for marketing targeting
 5. **Compute 4-week moving averages** using `AVG() OVER()` - for sales forecasting
 
-## 🗃️ 2. Database Schema 
+##  2. Database Schema 
 
 ### Entity-Relationship Diagram
 
@@ -45,8 +45,8 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
     ![screen shot of er diagram](screenshot/drawing of schema.png)
 * this is the screen shot in case the draw io is not working 
 
-Primary Keys: customer_id, product_id, sale_id
-Foreign Keys: customer_id references Customers, product_id references Products
+ *Primary Keys: customer_id, product_id, sale_id
+ * Foreign Keys: customer_id references Customers, product_id references Products
 
 ### Table: customers
 
@@ -69,7 +69,7 @@ Foreign Keys: customer_id references Customers, product_id references Products
 * Enables category-based sales analysis
 * Supports inventory optimization decisions
 
-![creating table of products and insert values](creating tables/create & insert into products table.sql)** - customers 
+![creating table of products and insert values](creating tables/create & insert into products table.sql)** - product result
 
 -- Create products table - stores coffee shop menu items
 -- Used for product performance analysis and inventory management
@@ -80,13 +80,14 @@ Core table for all analytical queries
 Contains foreign keys to connect customer and product data
 Stores temporal data for trend analysis and growth calculations
 
-**[creating table of sales values](creating tables/create & insert into sales.sql)** - customers 
+**[creating table of sales values](creating tables/create & insert into sales.sql)** - creating sales talbe 
 
 --Create sales table - records all customer transactions
 -- Links customers to products with date and amount details
-![sales   Results](screenshot/pl sales table.png)** - creating customer result
+![sales   Results](screenshot/pl sales table.png)** - creating sales result
 
             ### 1. Ranking Query
+
 -- Identify top 3 performing products in each branch
 -- Uses RANK() to position products by revenue within each location
 
