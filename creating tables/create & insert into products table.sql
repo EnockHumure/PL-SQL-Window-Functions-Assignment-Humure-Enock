@@ -1,3 +1,9 @@
+-- =====================================================
+-- Project: PL/SQL Window Functions – Schema Creation
+-- Student Name: Humure Enock
+-- Course: INSY 8311 – Database Development with PL/SQL
+-- =====================================================
+
 CREATE TABLE products (
     product_id NUMBER PRIMARY KEY,
     product_name VARCHAR2(100),

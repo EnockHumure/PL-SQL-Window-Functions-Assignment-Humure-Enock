@@ -5,7 +5,8 @@
 **Student ID:** [27394]  
 **Course:** Database Development with PL/SQL  
 **lecture:** Mr Eric Maniraguha  
-**GitHub Repository:** https://github.com/EnockHumure/plsql-window-functions-Humure--Enock
+
+**GitHub Repository:** ''
 ---
 
 ##  1. Business Problem Definition 
@@ -34,19 +35,20 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 4. **Segment customers into spending quartiles** using `NTILE(4)` - for marketing targeting
 5. **Compute 4-week moving averages** using `AVG() OVER()` - for sales forecasting
 
-## 🗃️ 2. Database Schema (2 marks)
+## 🗃️ 2. Database Schema 
 
 ### Entity-Relationship Diagram
 
 
----[drawing schema using draw io](screenshot/database schema.drawio)
-  [screen shot of er diagram](screenshot/drawing of schema.png)
+---[drawing schema using draw io]`screenshot/database schema.drawio`
+
+    ![screen shot of er diagram](screenshot/drawing of schema.png)
 * this is the screen shot in case the draw io is not working 
 
 Primary Keys: customer_id, product_id, sale_id
 Foreign Keys: customer_id references Customers, product_id references Products
 
-#### Table: customers
+### Table: customers
 
 ## this will help us to do this 3 essential thing
 1.**Stores customer demographic data and branch association
@@ -60,20 +62,20 @@ Foreign Keys: customer_id references Customers, product_id references Products
 .. ***Create customers table for Inock Rwandan Coffee Shop
 .. **This table stores all customer information and their branch preferences
 
-**[customers  Results](screenshot/pl customer table.png)** - creating customer result
+![customers  Results](screenshot/pl customer table.png)** - creating customer result
 
-#### Table: products
+### Table: products
 * Maintains product catalog with pricing information
 * Enables category-based sales analysis
 * Supports inventory optimization decisions
 
-**[creating table of products and insert values](creating tables/create & insert into products table.sql)** - customers 
+![creating table of products and insert values](creating tables/create & insert into products table.sql)** - customers 
 
 -- Create products table - stores coffee shop menu items
 -- Used for product performance analysis and inventory management
-**[products  Results](screenshot/pl product table.png)** - creating product result
+![products  Results](screenshot/pl product table.png)** - creating product result
 
-#### Table: sales
+### Table: sales
 Core table for all analytical queries
 Contains foreign keys to connect customer and product data
 Stores temporal data for trend analysis and growth calculations
@@ -82,43 +84,44 @@ Stores temporal data for trend analysis and growth calculations
 
 --Create sales table - records all customer transactions
 -- Links customers to products with date and amount details
-**[customers  Results](screenshot/pl customer table.png)** - creating customer result
+![sales   Results](screenshot/pl sales table.png)** - creating customer result
 
-            #### 1. Ranking Query
+            ### 1. Ranking Query
 -- Identify top 3 performing products in each branch
 -- Uses RANK() to position products by revenue within each location
 
-**[Ranking functions query](queries/01_ranking.sql)** - Top products analysis
-**[Ranking results](screenshots/ranking.png)** - Branch performance ranking
+**[Ranking functions query](queries/ranking window function.sql)** - Top products analysis
+
 
 * PARTITION BY creates separate rankings for each branch
 * RANK() assigns positions based on total sales revenue
 * Helps managers focus on location-specific bestsellers
-
-            ####2. Aggregate Query
+![Ranking results](screenshot/ranking window function.png)** - Branch performance ranking
+            ###2. Aggregate Query
 
 -- Calculate running totals and moving averages of weekly sales
 -- Demonstrates window functions with frame specifications
 
-**[Aggregate functions query](queries/02_aggregate.sql)** - Sales trends calculation
-**[Aggregate results](screenshots/aggregate.png)** - Running totals output
+**[Aggregate functions query](queries/agregate function.sql)** - Sales trends calculation
+
 
 * ROWS UNBOUNDED PRECEDING calculates cumulative sum from beginning
 * ROWS BETWEEN 3 PRECEDING AND CURRENT ROW creates 4-week moving window
 * Provides trend analysis and performance tracking capabilities
+![Aggregate results](screenshot/aggregate window  function.png)** - Running totals output
 
-            #### 3.navigation window functions
+            ### 3.navigation window functions
 
 -- Navigation Functions: Week-over-Week Growth Analysis
 -- Uses LAG() to compare current week with previous week sales
 -- Calculates growth percentages for trend identification
 
-**[Navigation Functions Implementation](queries/03_navigation_functions.sql)** - Week-over-week growth analysis  
-**[Navigation Results](screenshots/navigation_results.png)** - Growth percentage calculations
+**[Navigation Functions Implementation](queries/navigation function.sql)** - Week-over-week growth analysis  
 
 * LAG() function accesses previous week's data for comparison
 * Growth percentage calculation shows performance changes week-to-week
 * Helps identify successful periods and seasonal patterns for planning
+![Navigation Results](screenshot/navigation function.png)** - Growth percentage calculations
 
             ### 4. distribution window functions
 
@@ -126,13 +129,14 @@ Stores temporal data for trend analysis and growth calculations
 -- Uses NTILE(4) to divide customers into 4 equal spending groups
 -- Segments customers by total spending for targeted marketing
 
-**[Distribution Functions Implementation](queries/04_distribution_functions.sql)** - Customer segmentation by spending  
+**[Distribution Functions Implementation](queries/distribution functions.sql)** - Customer segmentation by spending  
 
 1.NTILE(4) function creates 4 equal customer groups based on spending
 2.Quartile 1 represents VIP customers needing retention focus
 3.Quartile 4 identifies customers who may need reactivation campaigns
 
-###### Step 4: Results Analysis 
+![Distribution results](screenshot/distribution window function .png)
+### Step 4: Results Analysis 
 
 ### Descriptive Analysis (What Happened?)
 
@@ -216,4 +220,4 @@ You always make learning meaningful, and this project would not have been possib
 - **institution: adventist university of central africa(AUCA) 
 
 
-**Repository:** `https://github.com/EnockHumure/plsql-window-functions-Humure--Enock`
+**Repository:** ``

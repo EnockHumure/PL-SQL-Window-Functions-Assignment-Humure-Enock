@@ -1,3 +1,9 @@
+-- =====================================================
+-- Project: PL/SQL Window Functions – Schema Creation
+-- Student Name: Humure Enock
+-- Course: INSY 8311 – Database Development with PL/SQL
+-- =====================================================
+
 SELECT customer_name, total_spent,
     NTILE(4) OVER (ORDER BY total_spent DESC) as spending_quartile
 FROM (
