@@ -71,6 +71,8 @@ CREATE TABLE customers (
 
 ```
 
+<img width="1291" height="530" alt="pl customer table 1" src="https://github.com/user-attachments/assets/2456e4e7-c58e-4617-a802-1ab45d977cb3" />
+
 <img width="1291" height="530" alt="pl customer table 1" src="https://github.com/user-attachments/assets/8121f701-bb77-4013-9415-ff8616fda9f7" />
 
 
