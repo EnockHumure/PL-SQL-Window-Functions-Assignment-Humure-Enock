@@ -60,13 +60,15 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 **[creating table of customers and insert values](creating tables/create & insert  into customers.sql)** - customers 
 this is the way of creating the table 
 
-```sql
+```
+sql
 CREATE TABLE customers (
     customer_id NUMBER PRIMARY KEY,
     customer_name VARCHAR2(100),
     branch_location VARCHAR2(50),
     customer_type VARCHAR2(20)
 );
+
 ```
 this the way of inserting the values
 ```sql
