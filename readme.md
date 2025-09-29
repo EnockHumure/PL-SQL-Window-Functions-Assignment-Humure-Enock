@@ -210,6 +210,7 @@ WHERE rn <= 3
 ORDER BY branch_location, rn;
 ```
 
+<img width="1206" height="611" alt="ranking window function" src="https://github.com/user-attachments/assets/6267d242-6921-4109-8010-64eada9b6d98" />
 
 
 * PARTITION BY creates separate rankings for each branch
@@ -243,7 +244,8 @@ ORDER BY week_number;
 * Provides trend analysis and performance tracking capabilities
 - Running totals output
 
-  
+  <img width="1149" height="611" alt="aggregate window  function" src="https://github.com/user-attachments/assets/297f2ce9-24a4-4150-82a2-e33da2da984c" />
+
 
 ### 3.navigation window functions
 
@@ -344,7 +346,7 @@ Screenshots and examples have been combined with both the **queries and their re
   *Window Functions Lecture Slides (Week 2).*  
 - W3Schools. (2024). *SQL Window Functions Reference.*  
   https://www.w3schools.com/sql/sql_window_functions.asp  
-
+through my work here are my forlder https://drive.google.com/drive/folders/1vlVcs2LNdf-qGTCdPzNVEgqGx2KnBDMX
 ---
 
 ## #Academic Integrity & Declaration
