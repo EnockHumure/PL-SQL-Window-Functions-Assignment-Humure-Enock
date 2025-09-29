@@ -62,7 +62,8 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 .. ***Create customers table for Inock Rwandan Coffee Shop
 .. **This table stores all customer information and their branch preferences
 
-![customers  Results](screenshot/pl customer table.png)** - creating customer result
+![customers  Results](<img width="1361" height="695" alt="pl customer table" src="https://github.com/user-attachments/assets/88038fb7-a340-4d04-a09a-96237ce6be17" />
+)** - creating customer result
 
 ### Table: products
 * Maintains product catalog with pricing information
