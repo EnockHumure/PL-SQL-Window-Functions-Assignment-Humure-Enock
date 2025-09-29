@@ -40,9 +40,7 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 ### Entity-Relationship Diagram
 
 
----[drawing schema using draw io]`screenshot/database schema.drawio`
 
-    ![screen shot of er diagram](https://github.com/EnockHumure/PL-SQL-Window-Functions-Assignment-Humure-Enock/blob/main/screenshot/drawing%20of%20schema.png?raw=true)
 * this is the screen shot in case the draw io is not working 
 
  *Primary Keys: customer_id, product_id, sale_id
