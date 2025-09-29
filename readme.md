@@ -58,6 +58,28 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 3.**Supports customer segmentation for marketing campaigns
 
 **[creating table of customers and insert values](creating tables/create & insert  into customers.sql)** - customers 
+this is the way of creating the table 
+
+```sql
+CREATE TABLE customers (
+    customer_id NUMBER PRIMARY KEY,
+    customer_name VARCHAR2(100),
+    branch_location VARCHAR2(50),
+    customer_type VARCHAR2(20)
+);
+```
+this the way of inserting the values
+```sql
+INSERT INTO customers VALUES (1, 'Alice Uwase', 'Kigali', 'Regular');
+INSERT INTO customers VALUES (2, 'Bob Mugisha', 'Huye', 'Student');
+INSERT INTO customers VALUES (3, 'Claire Iradukunda', 'Musanze', 'Tourist');
+INSERT INTO customers VALUES (4, 'David Habimana', 'Kigali', 'Regular');
+INSERT INTO customers VALUES (6, 'muturanyi romeo', 'Kigali', 'Regular');
+INSERT INTO customers VALUES (7, 'njishi kamali', 'Huye', 'Student');
+INSERT INTO customers VALUES (8, 'Claire uwikunze', 'Musanze', 'Tourist');
+INSERT INTO customers VALUES (9 'David bayingana', 'Kigali', 'Regular');
+INSERT INTO customers VALUES (10 'kubwimana aimable', 'Huye', 'Student');
+```
 
 .. ***Create customers table for Inock Rwandan Coffee Shop
 .. **This table stores all customer information and their branch preferences
@@ -71,6 +93,30 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 * Supports inventory optimization decisions
 
 ![creating table of products and insert values](creating tables/create & insert into products table.sql)** - product result
+```
+sql
+
+CREATE TABLE products (
+    product_id NUMBER PRIMARY KEY,
+    product_name VARCHAR2(100),
+    category VARCHAR2(50),
+    price NUMBER(8,2)
+);
+```
+```sql
+
+INSERT INTO products VALUES (1, 'Rwanda Arabica Brew', 'Coffee', 2500);
+INSERT INTO products VALUES (2, 'Virunga Cappuccino', 'Coffee', 3000);
+INSERT INTO products VALUES (3, 'Nyungwe Tea', 'Tea', 1500);
+INSERT INTO products VALUES (4, 'Kivu Croissant', 'Pastry', 2000);
+INSERT INTO products VALUES (5, 'Akagera Muffin', 'Pastry', 1800);
+INSERT INTO products VALUES (1, 'african Arabica Brew', 'Coffee', 2500);
+INSERT INTO products VALUES (2, 'kigali Cappuccino', 'Coffee', 3000);
+INSERT INTO products VALUES (3, 'muhabura Tea', 'Tea', 1500);
+INSERT INTO products VALUES (4, 'Kivu rurembo Croissant', 'Pastry', 2000);
+INSERT INTO products VALUES (5, 'volcano Muffin', 'Pastry', 1800);
+
+```
 
 -- Create products table - stores coffee shop menu items
 -- Used for product performance analysis and inventory management
@@ -82,7 +128,28 @@ Contains foreign keys to connect customer and product data
 Stores temporal data for trend analysis and growth calculations
 
 **[creating table of sales values](creating tables/create & insert into sales.sql)** - creating sales talbe 
-
+```sql
+CREATE TABLE sales (
+    sale_id NUMBER PRIMARY KEY,
+    customer_id NUMBER REFERENCES customers(customer_id),
+    product_id NUMBER REFERENCES products(product_id),
+    sale_date DATE,
+    quantity NUMBER,
+    amount NUMBER(10,2)
+);
+```
+```sql
+INSERT INTO sales VALUES (1, 1, 1, DATE '2025-01-10', 2, 5000);
+INSERT INTO sales VALUES (2, 2, 2, DATE '2025-01-01', 1, 3000);
+INSERT INTO sales VALUES (3, 3, 3, DATE '2025-01-02', 3, 4500);
+INSERT INTO sales VALUES (4, 4, 4, DATE '2025-01-03', 2, 4000);
+INSERT INTO sales VALUES (5, 5, 5, DATE '2025-01-04', 1, 1800);
+INSERT INTO sales VALUES (6, 7, 1, DATE '2025-01-05', 2, 5000);
+INSERT INTO sales VALUES (7, 6, 2, DATE '2025-01-06', 1, 3000);
+INSERT INTO sales VALUES (8, 7, 3, DATE '2025-01-07', 3, 4500);
+INSERT INTO sales VALUES (9, 7, 4, DATE '2025-01-08', 2, 4000);
+INSERT INTO sales VALUES (10, 10, 5, DATE'2025-01-09', 1, 1800);
+```
 --Create sales table - records all customer transactions
 -- Links customers to products with date and amount details
 ![sales   Results](screenshot/pl sales table.png)** - creating sales result
@@ -91,8 +158,26 @@ Stores temporal data for trend analysis and growth calculations
 
 -- Identify top 3 performing products in each branch
 -- Uses RANK() to position products by revenue within each location
+```
+sql
+SELECT branch_location, product_name, total_sales, rn
+FROM (
+  SELECT c.branch_location,
+         p.product_name,
+         SUM(s.amount) AS total_sales,
+         ROW_NUMBER() OVER (
+           PARTITION BY c.branch_location
+           ORDER BY SUM(s.amount) DESC
+         ) AS rn
+  FROM sales s
+  JOIN customers c ON s.customer_id = c.customer_id
+  JOIN products p  ON s.product_id = p.product_id
+  GROUP BY c.branch_location, p.product_name
+)
+WHERE rn <= 3
+ORDER BY branch_location, rn;
+```
 
-**[Ranking functions query](queries/ranking window function.sql)** - Top products analysis
 
 
 * PARTITION BY creates separate rankings for each branch
@@ -104,9 +189,22 @@ Stores temporal data for trend analysis and growth calculations
 
 -- Calculate running totals and moving averages of weekly sales
 -- Demonstrates window functions with frame specifications
-
-**[Aggregate functions query](queries/agregate function.sql)** - Sales trends calculation
-
+```sql
+SELECT week_number, weekly_sales,
+       SUM(weekly_sales) OVER (
+         ORDER BY week_number ROWS UNBOUNDED PRECEDING
+       ) AS running_total,
+       AVG(weekly_sales) OVER (
+         ORDER BY week_number ROWS BETWEEN 3 PRECEDING AND CURRENT ROW
+       ) AS four_week_avg
+FROM (
+    SELECT TO_NUMBER(TO_CHAR(sale_date, 'WW')) AS week_number,
+           SUM(amount) AS weekly_sales
+    FROM sales
+    GROUP BY TO_NUMBER(TO_CHAR(sale_date, 'WW'))
+)
+ORDER BY week_number; 
+```
 
 * ROWS UNBOUNDED PRECEDING calculates cumulative sum from beginning
 * ROWS BETWEEN 3 PRECEDING AND CURRENT ROW creates 4-week moving window
@@ -119,8 +217,18 @@ Stores temporal data for trend analysis and growth calculations
 -- Uses LAG() to compare current week with previous week sales
 -- Calculates growth percentages for trend identification
 
-**[Navigation Functions Implementation](queries/navigation function.sql)** - Week-over-week growth analysis  
+ - Week-over-week growth analysis
+   ```sql
+   SELECT week_number, weekly_sales,
+    LAG(weekly_sales, 1) OVER (ORDER BY week_number) as previous_week,
+    ROUND(((weekly_sales - LAG(weekly_sales, 1) OVER (ORDER BY week_number)) / 
+             LAG(weekly_sales, 1) OVER (ORDER BY week_number)) * 100, 2) as growth_percentage FROM (
+    SELECT TO_CHAR(sale_date, 'WW') as week_number, SUM(amount) as weekly_sales
+    FROM sales
+    GROUP BY TO_CHAR(sale_date, 'WW')) ORDER BY week_number;
 
+```
+```
 * LAG() function accesses previous week's data for comparison
 * Growth percentage calculation shows performance changes week-to-week
 * Helps identify successful periods and seasonal patterns for planning
@@ -132,7 +240,15 @@ Stores temporal data for trend analysis and growth calculations
 -- Uses NTILE(4) to divide customers into 4 equal spending groups
 -- Segments customers by total spending for targeted marketing
 
-**[Distribution Functions Implementation](queries/distribution functions.sql)** - Customer segmentation by spending  
+ - Customer segmentation by spending
+   ``` sql
+   SELECT customer_name, total_spent,
+    NTILE(4) OVER (ORDER BY total_spent DESC) as spending_quartileFROM (
+    SELECT c.customer_name, SUM(s.amount) as total_spent
+    FROM sales s
+    JOIN customers c ON s.customer_id = c.customer_id
+    GROUP BY c.customer_name)ORDER BY total_spent DESC;
+   ```
 
 1.NTILE(4) function creates 4 equal customer groups based on spending
 2.Quartile 1 represents VIP customers needing retention focus
