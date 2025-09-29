@@ -98,7 +98,8 @@ Stores temporal data for trend analysis and growth calculations
 * RANK() assigns positions based on total sales revenue
 * Helps managers focus on location-specific bestsellers
 ![Ranking results](screenshot/ranking window function.png)** - Branch performance ranking
-             Aggregate Query
+
+  ## Aggregate Query
 
 -- Calculate running totals and moving averages of weekly sales
 -- Demonstrates window functions with frame specifications
