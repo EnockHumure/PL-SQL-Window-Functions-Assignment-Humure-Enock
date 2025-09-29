@@ -7,7 +7,7 @@
 **Course:** Database Development with PL/SQL  
 **lecture:** Mr Eric Maniraguha  
 
-**GitHub Repository:** ''
+**GitHub Repository:** 'https://github.com/EnockHumure/PL-SQL-Window-Functions-Assignment-Humure-Enock'
 ---
 
 ##  1. Business Problem Definition 
@@ -40,12 +40,8 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 
 ### Entity-Relationship Diagram
 
-
-
-
-
-<img width="960" height="419" alt="pl product modal" src="https://github.com/user-attachments/assets/88d153fe-6900-4d5e-b489-611938c845c4" />
-
+[database schema.drawio](https://github.com/user-attachments/files/22600565/database.schema.drawio)
+<img width="2313" height="2079" alt="drawing of schema" src="https://github.com/user-attachments/assets/21d77ffa-eb09-4266-9fe2-972083f7d6fb" />
 
 
 * this is the screen shot in case the draw io is not working 
@@ -74,7 +70,8 @@ CREATE TABLE customers (
 );
 
 ```
-<img width="1361" height="695" alt="pl customer table" src="https://github.com/user-attachments/assets/1f70f780-97b5-4854-9aa7-2dc80d04e8f4" />
+
+<img width="1291" height="530" alt="pl customer table 1" src="https://github.com/user-attachments/assets/8121f701-bb77-4013-9415-ff8616fda9f7" />
 
 
 
@@ -94,10 +91,13 @@ INSERT INTO customers VALUES (10 'kubwimana aimable', 'Huye', 'Student');
 
 <img width="1361" height="695" alt="pl customer table" src="https://github.com/user-attachments/assets/9df0ce3a-be30-4187-8cb5-ce6165f79c7d" />
 
+** - creating customer modals
+<img width="1127" height="676" alt="pl customer modal" src="https://github.com/user-attachments/assets/ce922d93-fecd-4295-8809-aba76277fac3" />
+
 .. ***Create customers table for Inock Rwandan Coffee Shop
 .. **This table stores all customer information and their branch preferences
 
-)** - creating customer result
+
 
 ### Table: products
 * Maintains product catalog with pricing information
@@ -116,8 +116,9 @@ CREATE TABLE products (
 ```
 
 
+<img width="1244" height="562" alt="pl product table -2" src="https://github.com/user-attachments/assets/41269e2a-374a-40b9-aaf8-ca9faa2322e6" />
 
-<img width="1068" height="670" alt="pl product table" src="https://github.com/user-attachments/assets/52a4012c-5a7b-4a5d-a4e7-2bad010588ee" />
+
 
 -- Create products table - stores coffee shop menu items
 -- Used for product performance analysis and inventory management
@@ -139,6 +140,8 @@ INSERT INTO products VALUES (5, 'volcano Muffin', 'Pastry', 1800);
 
 <img width="1068" height="670" alt="pl product table" src="https://github.com/user-attachments/assets/9659cc3d-44d3-4013-9bdf-2c1fc1ddbc84" />
 
+<img width="960" height="419" alt="pl product modal" src="https://github.com/user-attachments/assets/d1ef591a-c2a9-4e2f-ba18-3f0561e1b66e" />
+
 
 ### Table: sales
 Core table for all analytical queries
@@ -158,7 +161,8 @@ CREATE TABLE sales (
 );
 ```
 
-<img width="1176" height="654" alt="pl sales table" src="https://github.com/user-attachments/assets/58eb6c67-ab95-497b-aef0-85a5d8e4105c" />
+<img width="1146" height="506" alt="pl sales table -3" src="https://github.com/user-attachments/assets/d8c5d1a7-10c6-49f0-a886-45dafe244b21" />
+
 
 --Create sales table - records all customer transactions
 -- Links customers to products with date and amount details
@@ -176,6 +180,8 @@ INSERT INTO sales VALUES (9, 7, 4, DATE '2025-01-08', 2, 4000);
 INSERT INTO sales VALUES (10, 10, 5, DATE'2025-01-09', 1, 1800);
 ```
 <img width="1176" height="654" alt="pl sales table" src="https://github.com/user-attachments/assets/4053d8c2-a589-44a4-a049-7b2858feaebc" />
+
+<img width="1195" height="700" alt="pl sales modal" src="https://github.com/user-attachments/assets/77116749-e47c-4f99-babc-dab33d7a1e70" />
 
 
 ### 1. Ranking Query
@@ -368,4 +374,4 @@ You always make learning meaningful, and this project would not have been possib
 - **institution: adventist university of central africa(AUCA) 
 
 
-**Repository:** ``
+**Repository:** `https://github.com/EnockHumure/PL-SQL-Window-Functions-Assignment-Humure-Enock`
