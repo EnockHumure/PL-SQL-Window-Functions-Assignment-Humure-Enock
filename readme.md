@@ -41,7 +41,7 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 
 
 
-![Uploading pl customer modal.png…]()
+
 
 <img width="960" height="419" alt="pl product modal" src="https://github.com/user-attachments/assets/88d153fe-6900-4d5e-b489-611938c845c4" />
 
@@ -61,7 +61,7 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 
 3.**Supports customer segmentation for marketing campaigns
 
-**[creating table of customers and insert values](creating tables/create & insert  into customers.sql)** - customers 
+** - customers 
 this is the way of creating the table 
 
 ```sql
@@ -144,7 +144,7 @@ Core table for all analytical queries
 Contains foreign keys to connect customer and product data
 Stores temporal data for trend analysis and growth calculations
 
-**[creating table of sales values](creating tables/create & insert into sales.sql)** - creating sales table
+ - creating sales table
 
 ```sql
 CREATE TABLE sales (
@@ -206,7 +206,7 @@ ORDER BY branch_location, rn;
 * PARTITION BY creates separate rankings for each branch
 * RANK() assigns positions based on total sales revenue
 * Helps managers focus on location-specific bestsellers
-![Ranking results](screenshot/ranking window function.png)** - Branch performance ranking
+ - Branch performance ranking
 
   ## Aggregate Query
 
@@ -232,7 +232,9 @@ ORDER BY week_number;
 * ROWS UNBOUNDED PRECEDING calculates cumulative sum from beginning
 * ROWS BETWEEN 3 PRECEDING AND CURRENT ROW creates 4-week moving window
 * Provides trend analysis and performance tracking capabilities
-![Aggregate results](screenshot/aggregate window  function.png)** - Running totals output
+- Running totals output
+
+  
 
 ### 3.navigation window functions
 
@@ -282,7 +284,7 @@ ORDER BY week_number;
 2.Quartile 1 represents VIP customers needing retention focus
 3.Quartile 4 identifies customers who may need reactivation campaigns
 
-![Distribution results](screenshot/distribution window function .png)
+
 ### Step 4: Results Analysis 
 
 ### Descriptive Analysis (What Happened?)
