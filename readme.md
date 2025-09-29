@@ -1,3 +1,4 @@
+
 # PL/SQL Window Functions Assignment
 ## Sales Analysis for Inock Rwandan Coffee Shop
 
