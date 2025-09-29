@@ -60,8 +60,7 @@ targeted marketing strategies to increase revenue by 15% in the next quarter.
 **[creating table of customers and insert values](creating tables/create & insert  into customers.sql)** - customers 
 this is the way of creating the table 
 
-```
-sql
+```sql
 CREATE TABLE customers (
     customer_id NUMBER PRIMARY KEY,
     customer_name VARCHAR2(100),
@@ -70,6 +69,7 @@ CREATE TABLE customers (
 );
 
 ```
+
 this the way of inserting the values
 ```sql
 INSERT INTO customers VALUES (1, 'Alice Uwase', 'Kigali', 'Regular');
@@ -86,7 +86,6 @@ INSERT INTO customers VALUES (10 'kubwimana aimable', 'Huye', 'Student');
 .. ***Create customers table for Inock Rwandan Coffee Shop
 .. **This table stores all customer information and their branch preferences
 
-![customers  Results](<img width="1361" height="695" alt="pl customer table" src="https://github.com/user-attachments/assets/88038fb7-a340-4d04-a09a-96237ce6be17" />
 )** - creating customer result
 
 ### Table: products
@@ -94,9 +93,8 @@ INSERT INTO customers VALUES (10 'kubwimana aimable', 'Huye', 'Student');
 * Enables category-based sales analysis
 * Supports inventory optimization decisions
 
-![creating table of products and insert values](creating tables/create & insert into products table.sql)** - product result
-```
-sql
+
+```sql
 
 CREATE TABLE products (
     product_id NUMBER PRIMARY KEY,
@@ -129,7 +127,8 @@ Core table for all analytical queries
 Contains foreign keys to connect customer and product data
 Stores temporal data for trend analysis and growth calculations
 
-**[creating table of sales values](creating tables/create & insert into sales.sql)** - creating sales talbe 
+**[creating table of sales values](creating tables/create & insert into sales.sql)** - creating sales table
+
 ```sql
 CREATE TABLE sales (
     sale_id NUMBER PRIMARY KEY,
@@ -140,6 +139,7 @@ CREATE TABLE sales (
     amount NUMBER(10,2)
 );
 ```
+
 ```sql
 INSERT INTO sales VALUES (1, 1, 1, DATE '2025-01-10', 2, 5000);
 INSERT INTO sales VALUES (2, 2, 2, DATE '2025-01-01', 1, 3000);
@@ -152,11 +152,12 @@ INSERT INTO sales VALUES (8, 7, 3, DATE '2025-01-07', 3, 4500);
 INSERT INTO sales VALUES (9, 7, 4, DATE '2025-01-08', 2, 4000);
 INSERT INTO sales VALUES (10, 10, 5, DATE'2025-01-09', 1, 1800);
 ```
+
 --Create sales table - records all customer transactions
 -- Links customers to products with date and amount details
 ![sales   Results](screenshot/pl sales table.png)** - creating sales result
 
-            ### 1. Ranking Query
+### 1. Ranking Query
 
 -- Identify top 3 performing products in each branch
 -- Uses RANK() to position products by revenue within each location
@@ -213,7 +214,7 @@ ORDER BY week_number;
 * Provides trend analysis and performance tracking capabilities
 ![Aggregate results](screenshot/aggregate window  function.png)** - Running totals output
 
-            ### 3.navigation window functions
+### 3.navigation window functions
 
 -- Navigation Functions: Week-over-Week Growth Analysis
 -- Uses LAG() to compare current week with previous week sales
@@ -236,7 +237,7 @@ ORDER BY week_number;
 * Helps identify successful periods and seasonal patterns for planning
 ![Navigation Results](screenshot/navigation function.png)** - Growth percentage calculations
 
-            ### 4. distribution window functions
+  ### 4. distribution window functions
 
 -- Distribution Functions: Customer Spending Segmentation  
 -- Uses NTILE(4) to divide customers into 4 equal spending groups
